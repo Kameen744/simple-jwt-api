@@ -1,15 +1,6 @@
 ---
 version: 0.2
 
-Parameters:
-
-  JWT_SECRET:
-    Type: String
-    Description: JWT Secret
-    Default: secret
-    MinLength: 1
-    MaxLength: 100
-    ConstraintDescription: Enter JWT Secret
 
 phases:
   install:
@@ -35,6 +26,7 @@ phases:
       - chmod +x ./kubectl ./aws-iam-authenticator      
       # - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
       - export PATH=$PWD/:$PATH  
+      - export JWT_SECRET='secret'
       - python --version
       - echo 'export PATH=$PWD/:$PATH' >> $HOME/.bashrc
       - echo `kubectl version --short --client`
