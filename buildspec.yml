@@ -1,6 +1,15 @@
 ---
 version: 0.2
 
+Parameters:
+
+  JWT_SECRET:
+    Type: String
+    Description: JWT Secret
+    Default: secret
+    MinLength: 1
+    MaxLength: 100
+    ConstraintDescription: Enter JWT Secret
 
 phases:
   install:
@@ -56,4 +65,4 @@ artifacts:
   files: build.json
 env:
   parameter-store:         
-    JWT_SECRET: 'secret'
+    JWT_SECRET: JWT_SECRET
