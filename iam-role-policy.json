@@ -8,11 +8,6 @@
                 "ssm:GetParameters"
             ],
             "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": "codestar-connections:UseConnection",
-            "Resource": "*"
         }
     ]
 }
